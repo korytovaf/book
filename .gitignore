@@ -1,0 +1,8 @@
+*~
+*.swp
+tmp/
+npm-debug.log
+readme.md
+
+node_modules
+.env
