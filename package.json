@@ -20,6 +20,7 @@
     "mongoose": "^6.1.4"
   },
   "devDependencies": {
+    "@architect/sandbox": "^4.4.2",
     "concurrently": "^6.5.1",
     "nodemon": "^2.0.15"
   }
