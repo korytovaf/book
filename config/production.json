@@ -1,5 +1,5 @@
 {
-  "port": 8000,
+  "port": 80,
   "jwtSecret": "korytov velosiped",
   "mongoUri": "mongodb+srv://kaf1:geDqi1-powwah-setnon@cluster0.iyskc.mongodb.net/book?retryWrites=true&w=majority"
 }
