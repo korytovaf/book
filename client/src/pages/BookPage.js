@@ -3,15 +3,21 @@ import { useHttp } from "../hooks/http.hook";
 import { AuthContext } from "../context/AuthContext";
 import {createUseStyles} from "react-jss";
 import Main from "../components/layout/Main";
+import Spinner from "../components/ui/Spinner";
 
 const useStyles = createUseStyles({
   wrapperBook: {
     marginTop: 20,
+    marginBottom: 50,
     width: "80%",
     lineHeight: '1.6em',
     fontSize: '14px',
     fontWeight: '300',
     color: "#000",
+    backgroundColor: 'ghostwhite',
+    boxShadow: '0px 0px 10px 2px #dfdfdf',
+    padding: '40px 20px',
+    borderRadius: 1,
     '& img': {
       width: '100%',
     },
@@ -69,7 +75,7 @@ const BookPage = () => {
     getBook()
   }, [getBook])
 
-  if (loading) return <p>Загрузка...</p>
+  if (loading) return <Spinner />
 
   return (
     <Main>

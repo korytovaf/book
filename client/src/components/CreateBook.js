@@ -5,6 +5,8 @@ import 'react-quill/dist/quill.snow.css';
 import {useHttp} from "../hooks/http.hook";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/AuthContext";
+import Spinner from "./ui/Spinner";
+import MyButton from "./ui/MyButton";
 
 const useStyles = createUseStyles({
   main: {
@@ -82,8 +84,7 @@ const useStyles = createUseStyles({
     justifyContent: "end",
     gap: 20,
     width: '80%',
-    marginRight: 20,
-    marginTop: 20,
+    margin: '20px 20px 40px',
     '@media (max-width: 425px)': {
       width: '100%',
     },
@@ -123,7 +124,7 @@ const CreateBook = () => {
     }
   }
 
-  if (loading) return <p>Сохранение...</p>
+  if (loading) return <Spinner />
 
   return (
     <>
@@ -136,8 +137,8 @@ const CreateBook = () => {
         />
       </div>
       <div className={save}>
-        <button onClick={() => navigate('/', { replace: true })} type="button">Отменить</button>
-        <button onClick={onSaveBook} type="button">Сохранить</button>
+        <MyButton onClick={() => navigate('/', { replace: true })} type="button">Отменить</MyButton>
+        <MyButton onClick={onSaveBook} type="button">Сохранить</MyButton>
       </div>
     </>
 

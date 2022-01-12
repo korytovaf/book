@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import { createUseStyles } from "react-jss";
 import Navigation from "./layout/Navigation";
 import {MenuContext} from "../context/MenuContext";
+import MyButton from "./ui/MyButton";
 
 const useStyles = createUseStyles({
   header: {
@@ -105,8 +106,8 @@ const Header = () => {
         <div className={`${wrapperMenu} ${openMenu && openWrapperMenu}`}>
           <Navigation/>
           {isAuth
-            ? <button onClick={onLogout} type="button">Выйти</button>
-            : <button onClick={onLogin} type="button">Войти</button>
+            ? <MyButton onClick={onLogout}>Выйти</MyButton>
+            : <MyButton onClick={onLogin}>Войти</MyButton>
           }
           <button className={btnClose} onClick={() => setOpenMenu(false)} type="button">Х</button>
         </div>
